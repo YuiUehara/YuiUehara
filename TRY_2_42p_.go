@@ -14,11 +14,11 @@ func main() {
 // println(s) //←多分、下にprintlnあるから要らない。
 
 		switch n {
-		case i == 5: // iが5の場合 
+		case 5: // iが5の場合 
 			fmt.Println("大吉")
-		case i == 4,3: // iが4か3の場合  
+		case 4,3: // iが4か3の場合  
 			fmt.Println("中吉")
-		case i == 2,1: // iが2か1の場合 
+		case 2,1: // iが2か1の場合 
 			fmt.Println("吉")
 		default: // そうでない場合（数値は0~5の乱数なので0しかない）
 			fmt.Println("凶")
