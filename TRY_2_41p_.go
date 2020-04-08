@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 // 2章 基本構文 41p 【TRY】 奇数と偶数 
+// 正答例リンク"https://play.golang.org/p/pruHZLxX8jc"
 	for i := 1; i <＝ 100; i++ { /* 100まで繰り返せ */
 			if i%2 == 0 {/* もしもiが偶数（2で割った数が0）だったら */
 /*				fmt.Println(i + "-偶数")*/
@@ -14,15 +15,4 @@ func main() {
 				fmt.Printf("%d-奇数\n", i）
 			}
 		}
-
-	const (
-		a = 1 + 2
-		b
-		c
-	)
-	fmt.Println(a, b, c)
-
-	println(
-		"Hello,world"
-	)
 }
