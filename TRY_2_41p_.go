@@ -1,6 +1,7 @@
 package main
 
-import "fmt"
+import ("fmt"
+)
 
 func main() {
 // 2章 基本構文 41p 【TRY】 奇数と偶数 
