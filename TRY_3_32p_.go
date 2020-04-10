@@ -1,4 +1,6 @@
 package main
+// 3章 関数と型 32p 【TRY】 スライスの利用 
+// 正答例リンク"https://play.golang.org/p/FGuwWuFjQfO"
 
 func main() {
 	// タイトルから察するにスライスを使って
