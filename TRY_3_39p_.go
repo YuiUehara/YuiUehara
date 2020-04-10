@@ -9,3 +9,4 @@ type Score struct { // "Score"の構造を設定します。
 func main() {
 }
 		}
+// 思いつかなくて正当を確認したけどこれで本当に良いのか？？？
