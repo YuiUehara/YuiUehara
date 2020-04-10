@@ -1,4 +1,6 @@
 package main
+// 3章 関数と型 10p 【TRY】 組み込み型（数値） 
+// 設問内例文リンク"https://play.golang.org/p/pI0uTk6aZeM"
 
 func main() {
 //	var sum int　// sum は１０進法の整数です。
