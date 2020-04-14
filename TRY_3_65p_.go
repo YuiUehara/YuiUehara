@@ -4,7 +4,7 @@ package main
 type MyInt int
 // Incメソッドは自身を1ずつ加算する
 
-func (n *MyInt) Int() { *n++ } //←こいつが1ずつ加算させるメソッド
+func (n *MyInt) Int() { *n++ } //←++が1ずつ加算させる演算子なのでメソッド
 
 func main() {
 	var n MyInt // 
@@ -19,3 +19,5 @@ func main() {
 
 // レシーバに変更を加えるのはポインタ型
 // おそらくポインタ型のメソッドリストを理解できてないから解けていない
+// 参考リンク ポインタ型のメソッドリスト 
+// "https://qiita.com/tenntenn/items/49bf8b5cc69c2fcfb627"
