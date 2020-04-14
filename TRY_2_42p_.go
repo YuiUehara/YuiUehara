@@ -6,7 +6,7 @@ import ("fmt"
 )
 
 func main() {
-// 2章 基本構文 41p 【TRY】 奇数と偶数 
+// 2章 基本構文 42p 【TRY】 おみくじプログラムを作ろう 
 // 正答例リンク"https://play.golang.org/p/pruHZLxX8jc"
 	t := time.Now().UnixNano() //現在時刻を数値で取得
 	rand.Seed(t) //乱数の種を設定？ ←要復習
