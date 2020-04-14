@@ -9,8 +9,7 @@ func (n *MyInt) Int() { *n++ } //←こいつが1ずつ加算
 func main() {
 	var n MyInt // 
 	println(n) // 
-//	(n).Inc() // 
-	(&n).Inc() // 
+	(n).Inc() // 
 	println(n) // 
 }
 
