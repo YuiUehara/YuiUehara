@@ -4,7 +4,7 @@ package main
 type MyInt int
 // Incメソッドは自身を1ずつ加算する
 
-func (n *MyInt) Int() { *n++ } //←++が1ずつ加算させる演算子なのでメソッド
+func (n *MyInt) Inc() { *n++ } //←++が1ずつ加算させる演算子なのでメソッド
 
 func main() {
 	var n MyInt // 
