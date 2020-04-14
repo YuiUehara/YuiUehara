@@ -17,6 +17,5 @@ func main() {
 
 // n.Inc undefined (type *MyInt has no field or method Inc)
 // *MyInt にフィールドかメソッドがないよ
-// あるやんけ
 
 // レシーバに変更を加えるのはポインタ型
