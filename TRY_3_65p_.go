@@ -4,12 +4,12 @@ package main
 type MyInt int
 // Incメソッドは自身を1ずつ加算する
 
-func (n *MyInt) Int() { *n++ } //←こいつが1ずつ加算
+func (n *MyInt) Int() { *n++ } //←こいつが1ずつ加算させるメソッド
 
 func main() {
 	var n MyInt // 
 	println(n) // 
-	(n).Inc() // 
+	(n).Inc() // "."でメソッド（１ずつ加算）を召喚するレシーバ
 	println(n) // 
 }
 
@@ -18,3 +18,4 @@ func main() {
 // *MyInt にフィールドかメソッドがないよ
 
 // レシーバに変更を加えるのはポインタ型
+// おそらくポインタ型のメソッドリストを理解できてないから解けていない
