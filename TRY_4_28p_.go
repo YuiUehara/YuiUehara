@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	//"github.com/tenntenn/greeting/v2"
-	"greeting.go" //←これが無効になっている
+	"greeting.go" //←これが無効になっていた
 )
 
 func main() {
