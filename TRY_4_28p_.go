@@ -1,5 +1,7 @@
 package main
 
+// 4章 パッケージ 28p 【TRY】 ライブラリを取得してみよう
+
 import (
 	"fmt"
 
