@@ -1,0 +1,42 @@
+package main
+
+import (
+	"html/template"
+	"io"
+
+	"github.com/labstack/echo"
+	controllers "github.com/zuu-development/zuu-training/controllers"
+)
+
+type Template struct {
+	templates *template.Template
+}
+
+func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+func main() {
+	// Echoのインスタンス作る 初期化の処理
+	e := echo.New() /// 以後、eでecho使える
+
+	// テンプレートを利用するためのRendererの設定
+	t := &Template{ // こっちはレシピから作っている（定義している？）
+		templates: template.Must(template.ParseGlob("views/*.html")),
+/// error while parsing
+/// /Users/yui.uehara/go/src/github.com/zuu-development/zuu-training/Gopkg.
+/// toml: manifest validation failed: unable to load TomlTree from string: (26, 1): unexpected token
+
+	}
+	e.Renderer = t /// echoのrendererって設定にtを当てはめている
+
+	// ルーティング
+	e.GET("/", controllers.Hello)        ///データの取得 アクセスに対して第2引き数（レスポンスの値）（contro~）を返している
+	/// :8080の後に/、何もついていないときにcontroller
+	e.POST("/hello", controllers.Hello2) ///データの更新
+	/// 課題↑こいつでmodelから"hello world2"の文字列を受け取って表示する
+
+	// サーバー起動
+	e.Start(":8080")
+}
+ß
