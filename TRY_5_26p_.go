@@ -46,19 +46,15 @@ func main() {
     // ここから
     if err != nil { // エラーが出た時の処理
 		log.Fatal(err)
-	//	return
-    }
+	path = filepath.Dir(path) // 実行ファイルのディレクトリを取得
+	}
     // ここまで何のための物かわからん
-    // path = filepath.Dir(path) // 実行ファイルのディレクトリを取得
-
-
 
     // p10より参照(flagパッケージ)
     //flag.Parse()
     //fmt.Println(strings.Repeat(*msg, n))
     ///fmt.Println(flag.Args()
     //n := (ここに受け取った物をいれる）（filepathが入るように)
-
 
     for i, file := range files {
         // 行番号、ファイル名を表示させる
@@ -67,14 +63,14 @@ func main() {
         } else {
             fmt.Println(file)
         }
-    }
 
-    // 読み込み
-    path, err := os.Open(filepath.Join(path, file)) //ディレクトリにファイル名を結合
-    //path err := os.Open(filepath.Join("dir", "main.go")) //ディレクトリにファイル名を結合
-    if err != nil {
-        fmt.Fprintln(os.Stderr, "読み込みに失敗しました", err)
-    }
+		// 読み込み
+		path, err := os.Open(filepath.Join(path, file)) //ディレクトリにファイル名を結合
+		//path err := os.Open(filepath.Join("dir", "main.go")) //ディレクトリにファイル名を結合
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "読み込みに失敗しました", err)
+		}
+
 
     // p23より参照（filepathパッケージ）
     // パスを結合する
@@ -90,33 +86,29 @@ func main() {
 
 // ここから2.ファイルを順に標準出力に出力させる
 
-    // 出力
-    scanner := bufio.NewScanner(path)
-/// エラーメッセージ
-/// ./main.go:92:29: cannot use path (type string) as type io.Reader in argument to bufio.NewScanner:
-/// bufio.NewScannerへの引数でタイプio.Readerとしてパス（タイプ文字列）を使用できません：
-/// string does not implement io.Reader (missing Read method)
-/// 文字列はio.Readerを実装していません（Readメソッドがありません）
-
-    // TODO: 変数strCountによる出力文字数制限
-    for scanner.Scan(){
-        fmt.Println(scanner.Text())
-    }
-    /// e := echo.New()
-
-    /// e.GET("/", cfilepath.Base(path))        //データの取得 アクセスに対して第2引き数（レスポンスの値）を返している
-    /// :8080の後に
-    //fmt.Println()
-
-    // p22 より参照（bufio.Scanner）
-    // 標準入力から読み込む
-    //scanner := bufio.NewScanner(os.Stdin)
-    // 1行ずつ読み込んで繰り返す
-    //for scanner.Scan() {
-        //1行分を出力する
-        //      fmt.Fprintln(scanner.Text())
+		// 出力
+		scanner := bufio.NewScanner(path)
+		// TODO: 変数strCountによる出力文字数制限
+		for scanner.Scan() {
+			fmt.Println(scanner.Text())
+		}
+		/// e := echo.New()
+	
+		/// e.GET("/", cfilepath.Base(path))        //データの取得 アクセスに対して第2引き数（レスポンスの値）を返している
+		/// :8080の後に
+		//fmt.Println()
+	
+		// p22 より参照（bufio.Scanner）
+		// 標準入力から読み込む
+		//scanner := bufio.NewScanner(os.Stdin)
+		// 1行ずつ読み込んで繰り返す
+		//for scanner.Scan() {
+			//1行分を出力する
+			//      fmt.Fprintln(scanner.Text())
+	}
 }
-    //fmt.Println()
+
+//fmt.Println()
 
 
 //
@@ -187,33 +179,4 @@ func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
 ・
 
 
-*/
-
-
-/* 旧バージョン
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"path/filepath"
-)
-
-func main() {
-	// p23より参照
-	// パスを結合する
-	path := filepath.Join("dir", "main.go")
-	fmt.Println(path)
-	// ファイル名を取得
-	fmt.Println(filepath.Base(path))
-
-	// p22 より参照
-	// 標準入力から読み込む
-	scanner := bufio.NewScanner(os.Stdin)
-	// 1行ずつ読み込んで繰り返す
-	for scanner.Scan() {
-		//1行分を出力する
-		fmt.Println(scanner.Text())
-	}
-	fmt.Println()
-}
 */
