@@ -1,9 +1,6 @@
 package main
 
 // 5章 コマンドラインツール 26p 【TRY】 catコマンドを作ろう
-package main
-
-// 5章 コマンドラインツール 26p 【TRY】 catコマンドを作ろう
 
 import (
     "bufio"
